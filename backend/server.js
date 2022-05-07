@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 const cors = require('cors');
 const mongoose = require('mongoose')
 
@@ -21,7 +21,7 @@ app.use('/tasks', require('./routes/taskRoutes'))
 app.use('/users', require('./routes/userRoutes'))
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../frontend/build')))
+    app.use(express.static(path.join(__dirname, '../frontend/build/')))
 
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
