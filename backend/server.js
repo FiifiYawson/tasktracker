@@ -10,7 +10,7 @@ app.use(cors())
 
 const db = process.env.NODE_ENV === 'production' ? process.env.MONGO_ATLAS_URI : process.env.MONGO_LOCAL_URI
 
-mongoose.connect(db).then().catch((err) => {
+mongoose.connect(`${db}`).then().catch((err) => {
     console.log(err)
 })
 
