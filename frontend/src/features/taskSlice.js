@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 export const addTask = createAsyncThunk("api/addtask", async(action, thunkAPI) => {
-    const response = await fetch('http://localhost:5000/tasks/', {
+    const response = await fetch('tasks/', {
         method: "POST",
         headers: {
             authorization: localStorage.getItem('auth'),
@@ -19,7 +19,7 @@ export const addTask = createAsyncThunk("api/addtask", async(action, thunkAPI) =
 })
 
 export const getTasks = createAsyncThunk('api/gettask', async(thunkAPI) => {
-    const response = await fetch('http://localhost:5000/tasks/', {
+    const response = await fetch('tasks/', {
         headers: {
             authorization: localStorage.getItem("auth")
         }
@@ -31,7 +31,7 @@ export const getTasks = createAsyncThunk('api/gettask', async(thunkAPI) => {
 })
 
 export const deleteTask = createAsyncThunk('api/deletetask', async(action, thunkAPI) => {
-    const response = await fetch(`http://localhost:5000/tasks/${action.payload._id}`, {
+    const response = await fetch(`tasks/${action.payload._id}`, {
         method: "DELETE",
         headers: {
             authorization: localStorage.getItem("auth"),
@@ -48,7 +48,7 @@ export const deleteTask = createAsyncThunk('api/deletetask', async(action, thunk
 })
 
 export const updateTask = createAsyncThunk('api/updateTask', async(action, thunkAPI) => {
-    const response = await fetch(`http://localhost:5000/tasks/${action.payload._id}`, {
+    const response = await fetch(`tasks/${action.payload._id}`, {
         method: "PUT",
         headers: {
             authorization: localStorage.getItem("auth"),

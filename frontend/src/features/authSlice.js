@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export const postForm = createAsyncThunk('api/login', async(action, thunkAPI) => {
-    const response = await fetch(`http://localhost:5000/users/${action.payload.status}`, {
+    const response = await fetch(`users/${action.payload.status}`, {
         method: "POST",
         headers: {
             "content-type": "application/json"
@@ -32,7 +32,7 @@ export const postForm = createAsyncThunk('api/login', async(action, thunkAPI) =>
 })
 
 export const deleteUser = createAsyncThunk("api/deleteUser", async(thunkAPI) => {
-    const response = await fetch('http://localhost:5000/users/delete', {
+    const response = await fetch('users/delete', {
         method: "DELETE",
         headers: {
             authorization: localStorage.getItem("auth")
