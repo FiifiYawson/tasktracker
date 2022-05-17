@@ -72,7 +72,7 @@ function LoginForm() {
                 {formState.isError && <Message isError={true} message={formState.message}/>}
             </div>
             {
-                formState.status === 'Login' ? <div style={linkStyle} onClick={()=>{toggleFormState()}}>create an account</div>:<div onClick={()=>{toggleFormState()}} style={linkStyle}>click here to login</div>
+                formState.status === 'Login' ? <div id='login-register' style={linkStyle} onClick={()=>{toggleFormState()}}>create an account</div>:<div id='login-register' onClick={()=>{toggleFormState()}} style={linkStyle}>click here to login</div>
             }
         </>
     )

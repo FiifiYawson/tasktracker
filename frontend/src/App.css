@@ -7,6 +7,12 @@
     height: 30px;
 }
 
+#login-register {
+    text-align: center;
+    margin: auto;
+    padding: auto;
+}
+
 #login-submit {
     width: 300px;
     height: 30px;
@@ -14,6 +20,7 @@
     background-color: #00f;
     border: 0px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 #login-container {
