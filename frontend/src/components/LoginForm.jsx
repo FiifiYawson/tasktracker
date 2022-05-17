@@ -49,10 +49,6 @@ function LoginForm() {
             })
 
         }else{
-            setFormState({
-                ...formState, isError: false, message: ""
-            })
-
             const payload = {
                 name: formState.name,
                 password: formState.password,

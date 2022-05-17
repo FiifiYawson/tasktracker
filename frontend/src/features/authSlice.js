@@ -75,7 +75,7 @@ const authSlice = createSlice({
                 state.isLoading = false
                 state.isSuccess = false
                 state.isError = true
-                state.message = 'error'
+                state.message = 'unknown error'
             })
             .addCase(deleteUser.fulfilled, (state, action) => {
                 state.isDelete = true
