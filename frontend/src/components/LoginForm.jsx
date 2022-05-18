@@ -2,7 +2,8 @@ import {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {postForm} from '../features/authSlice.js'
 import Message from './Message.jsx'
-import {FaUser} from 'react-icons/fa'
+import { FaUser } from 'react-icons/fa'
+import Title from './Title.jsx'
 
 function LoginForm() {
     const [formState, setFormState] = useState({
@@ -61,6 +62,7 @@ function LoginForm() {
 
     return (
         <>
+            <h1 id='login-logo'><Title color="#00f"/></h1>
             <div id='login-container'>
                 <FaUser style={singLogoStyle}/>
                 

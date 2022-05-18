@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .login-input {
     display: block;
     width: 300px;
@@ -5,6 +9,25 @@
     margin-top: 10px;
     margin-bottom: 10px;
     height: 30px;
+}
+
+#login-logo {
+    text-align: center;
+}
+
+#login-logo #logo {
+    position: static;
+    transform: translateY(70px);
+    opacity: 0;
+    animation: title-animation 1s linear forwards;
+    font-size: larger;
+}
+
+@keyframes title-animation {
+    100% {
+        transform: translateY(100px);
+        opacity: 1;
+    }
 }
 
 #login-register {

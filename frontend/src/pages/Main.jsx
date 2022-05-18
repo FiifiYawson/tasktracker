@@ -4,7 +4,8 @@ import AddForm from '../components/AddForm'
 import {getTasks} from '../features/taskSlice'
 import Task from '../components/Task.jsx'
 import Header from '../components/Header'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import BackToTop from '../components/BackToTop'
 
 function Main() {
     const dispatch = useDispatch()
@@ -36,6 +37,7 @@ function Main() {
                 }
             </div>
             }
+            <BackToTop/>
         </>
     )
 }
