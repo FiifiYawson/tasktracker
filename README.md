@@ -1,5 +1,5 @@
 # tasktracker
-this is a project code that tracks your tasks once you register on page
+this is a react project code that tracks your tasks once you register on page
 
 you can visit http://task-tracker-0.herokuapp.com to try it out
 
