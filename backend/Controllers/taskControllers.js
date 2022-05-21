@@ -82,6 +82,22 @@ async function deleteTask(req, res) {
     }
 }
 
+async function deleteTasks(req, res) {
+    try {
+        await tasks.deleteMany({ user: req.authorization.user._id })
+
+        res.json({
+            message: 'tasks deleted successfully',
+            isSuccess: true,
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: 'server error',
+            isSuccess: false,
+        })
+    }
+}
+
 async function updateTask(req, res) {
     try {
         const task = await tasks.findById(req.params.id)
@@ -110,6 +126,7 @@ module.exports = {
     getTasks,
     createTask,
     deleteTask,
+    deleteTasks,
     updateTask,
     tasks,
 }

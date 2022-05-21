@@ -94,7 +94,7 @@ html {
     align-items: flex-start;
 }
 
-.header-option {
+#header-option {
     font-size: 30px;
     text-align: center;
     padding: 0 5px;
@@ -102,10 +102,44 @@ html {
 }
 
 .option-label {
-    font-size: 10px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
-.header-option:hover {
+#options {
+    position: fixed;
+    width: 300px;
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.804), rgba(139, 133, 133, 0.582));
+    opacity: 1;
+    height: 100vh;
+    box-shadow: 0, 3, 5, 5;
+    right: -300px;
+    transition: 1s right;
+}
+
+#options.active {
+    right: 0px;
+}
+
+.option {
+    color: #fff;
+    cursor: pointer;
+    font-size: 50px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    width: 300px;
+    display: flex;
+    transition: 1s padding-left;
+    margin-left: 5px;
+    align-items: center;
+}
+
+.option:hover {
+    padding-left: 20px;
+    border-bottom: 3px #000 solid;
+}
+
+#header-option:hover {
     background-color: none;
     color: #fff;
 }

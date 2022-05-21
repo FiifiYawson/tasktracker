@@ -42,7 +42,18 @@ export const deleteTask = createAsyncThunk('api/deletetask', async(action, thunk
 
     data.tasks = action.payload.tasks
 
-    console.log(data.tasks)
+    return data
+})
+
+export const clearTasks = createAsyncThunk('api/clearTasks', async(action, thunkAPI) => {
+    const response = await fetch('tasks', {
+        method: 'DELETE',
+        headers: {
+            authorization: localStorage.getItem('auth')
+        }
+    })
+
+    const data = response.json()
 
     return data
 })
@@ -129,6 +140,14 @@ const taskSlice = createSlice({
             .addCase(updateTask.rejected, (state) => {
                 state.isLoading = false
                 state.isSuccess = false
+            })
+            .addCase(clearTasks.pending, state => {
+                state.isLoading = true
+            })
+            .addCase(clearTasks.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = action.payload.isSuccess
+                state.tasks = []
             })
     }
 })

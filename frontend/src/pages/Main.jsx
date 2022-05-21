@@ -20,11 +20,11 @@ function Main() {
             }else{
                 navigate('/login')
             }
-    },[dispatch,navigate,state.auth.isDelete])
-
+    }, [dispatch, navigate, state.auth.isDelete])
+    
     return (
         <>
-            <Header/>
+            <Header />
             <AddForm/>
             { state.task.tasks.length !== 0 &&
             <div id='tasks-container'>

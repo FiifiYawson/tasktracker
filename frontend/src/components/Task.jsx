@@ -18,7 +18,6 @@ function Task({discription, title, _id}) {
     const deleteTaskFn = (e) => {
         const tasks = taskState.tasks.filter(task => task._id !== _id)
 
-
         const payload = {
             _id,
             tasks,
