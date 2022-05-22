@@ -1,6 +1,6 @@
 import { useRef} from 'react'
 import { FaUserSlash, FaSignOutAlt } from 'react-icons/fa'
-import { GiCancel } from 'react-icons/gi'
+import { BiTaskX } from 'react-icons/bi'
 import { deleteUser, authActions} from '../features/authSlice.js'
 import { clearTasks } from '../features/taskSlice'
 import { useDispatch } from 'react-redux'
@@ -57,7 +57,7 @@ function Options() {
                     <div className='option-label'>Log Out</div>
                 </div>
                 <div onClick={clearTasksFn} className='option'>
-                    <GiCancel />
+                    <BiTaskX />
                     <div className='option-label'>Clear Tasks</div>
                 </div>
                 <div onClick={deleteUserFn} className='option'>

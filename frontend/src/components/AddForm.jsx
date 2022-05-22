@@ -65,7 +65,7 @@ function AddForm() {
     return (
         <div id='add-task-container'>
             <h2>Add task</h2>
-            <input className='task-input' type="text" onKeyUp={addTaskFn} onChange={onChange} value={formInput.title} name="title" placeholder='Input task title' />
+            <input autoFocus autoCapitalize='true' className='task-input' type="text" onKeyUp={addTaskFn} onChange={onChange} value={formInput.title} name="title" placeholder='Input task title' />
             <input className='task-input' type="text" onKeyUp={addTaskFn} onChange={onChange} value={formInput.discription} name="discription" placeholder='Input task discription' />
             {formInput.isInput && <button id='add-task-submit' onClick={addTaskFn}>submit</button>}
             {formInput.isError && <Message isError={true} message={formInput.message}/>}

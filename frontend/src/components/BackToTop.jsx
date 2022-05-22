@@ -21,7 +21,8 @@ function BackToTop() {
         fontSize: '40px',
         border: '1px #000 solid',
         borderRadius: '50%',
-        opacity: '0'
+        opacity: '0',
+        boxShadow: '-2px 2px 3px',
     }
   return (
     <FaAngleUp id='back-to-top' style={style} onClick={scrollToTop}/>
