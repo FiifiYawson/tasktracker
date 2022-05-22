@@ -33,8 +33,16 @@ function Options() {
         options.current.classList.add('active')
     }
 
-    const closeOption = () => {
-        options.current.classList.remove('active')
+    const closeOption = (e) => {
+
+        const removeActive = (e) => {
+            if (e.target !== options.current) {
+                options.current.classList.remove('active')       
+                window.removeEventListener('click', removeActive)
+            }
+        }
+
+        window.addEventListener('click', removeActive)
     }
 
     return (
@@ -43,7 +51,7 @@ function Options() {
                 <FaBars/>
             </div>
 
-            <div id='options' autoFocus ref={options} >
+            <div id='options' onMouseOut={closeOption} ref={options} >
                 <div onClick={logoutFn} className='option'>
                     <FaSignOutAlt/>
                     <div className='option-label'>Log Out</div>
