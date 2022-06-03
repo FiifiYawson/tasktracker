@@ -170,25 +170,34 @@ body {
 
 .task {
     position: relative;
-    word-wrap: break-word;
     background-color: #fff;
     margin: 10px;
     min-height: 200px;
     transition: all 0.5s;
+    min-width: 60px;
+    word-wrap: break-word;
+}
+
+@media (max-width:740px) {
+    #tasks-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .task {
+        min-height: 60px;
+    }
 }
 
 #tasks-container>:nth-child(even):hover {
     border-bottom: 1px #000 solid;
     border-radius: 5px;
     background-color: rgb(222, 222, 229);
-    flex-basis: 500px;
 }
 
 .task:hover {
     border-bottom: 1px #000 solid;
     border-radius: 5px;
     background-color: rgb(222, 222, 229);
-    flex-basis: 500px;
 }
 
 .task-title {

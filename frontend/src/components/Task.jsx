@@ -6,6 +6,7 @@ function Task({discription, title, _id}) {
 
     const [state, setState] =useState({
         isUpdate: false,
+        isHover: false,
     })
 
     const taskState = useSelector((state)=>{ return state.task})
